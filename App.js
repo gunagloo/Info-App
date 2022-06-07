@@ -2,9 +2,10 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
-import EventsScreen from './screens/EventsScreen';
+import EventsStack from './screens/EventsScreen'
 import ContactsScreen from './screens/ContactsScreen';
 import FontAwesome from "react-native-vector-icons/FontAwesome";
+
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +34,7 @@ export default function App() {
         })}
       >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Events" component={EventsScreen} />
+        <Tab.Screen name="Events" options={{headerShown: false}} component={EventsStack} />
         <Tab.Screen name="Contacts" component={ContactsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
